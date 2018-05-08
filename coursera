@@ -1,1 +1,31 @@
 解决coursera可以登录但无法播放视频
+
+1.打开hosts文件
+mac系统 => /private/etc/hosts
+Linux系统 => /etc/hosts
+windows系统 => C:\Windows\System32\drivers\etc\hosts
+
+2.修改hosts文件
+将52.84.246.72 d3c33hcgiwev3.cloudfront.net粘贴到文件末尾，保存
+
+[52.84.246.90    d3c33hcgiwev3.cloudfront.net
+52.84.246.252    d3c33hcgiwev3.cloudfront.net
+52.84.246.144    d3c33hcgiwev3.cloudfront.net
+52.84.246.72    d3c33hcgiwev3.cloudfront.net
+52.84.246.106    d3c33hcgiwev3.cloudfront.net
+52.84.246.135    d3c33hcgiwev3.cloudfront.net
+52.84.246.114    d3c33hcgiwev3.cloudfront.net
+52.84.246.90    d3c33hcgiwev3.cloudfront.net
+52.84.246.227    d3c33hcgiwev3.cloudfront.net]
+
+3.刷新网页\刷新DNS（cmd->ipconfig flushdns）
+
+原理：
+
+通过IP访问网站，方便记忆，通过与IP对应的域名来查找网站。计算机将我们键入的域名通过DNS进行域名解析找到对应的IP。
+GFW的几种封锁方式中有一种是DNS污染，对域名解析过程进行干扰，使得某些被干扰的域名返回错误IP，主机无法连接获取资源。
+
+hosts相当于一个本地的DNS，域名解析过程，系统先在hosts文件查找对于的域名解析，如果没找到再去DNS上找。
+
+这种方法在Coursera是适用的，原理就是Coursera播放视频会去d3c33hcgiwev3.cloudfront.net请求资源，Coursera没有被墙，但是这个视频支持的网址是被墙的，
+所以出现可以登录Coursera但无法播放视频的问题。
