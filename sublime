@@ -1,0 +1,6 @@
+C:\Users\Administrator\AppData\Roaming\Sublime Text 3\Local目录下的
+Session.sublime_session--sublime中打开的所有文件的内容都会保存在这个文件里，关掉一个文档后，相应的内容也会删除，还有所有打开过的文档历史记录（删了还会写入）
+Auto Save Session.sublime_session--按ctrl+S会生成该文件，临时文件，当sublime关闭时会自动删除
+
+写过的文档如果没有保存就关掉了，可以在Session.sublime_session中找到。
+（不过，一般下次打开sublime还是会显示的，只是好奇我又没有保存为文件，怎么还会被保存，原来是存在Session.sublime_session中了）
